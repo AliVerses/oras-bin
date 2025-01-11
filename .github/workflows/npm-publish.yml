@@ -22,7 +22,7 @@ jobs:
       - run: git config --global user.name "github-actions[bot]"
       - run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
       - run: npm run release
-      - run: git push --follow-tags origin HEAD:release/${{ github.ref_name }}
+      - run: git push --follow-tags origin ${{ github.ref_name }}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOEKEN_NO_OTP}}
