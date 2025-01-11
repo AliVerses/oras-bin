@@ -19,10 +19,10 @@ jobs:
           registry-url: https://registry.npmjs.org/
       - run: npm ci
       - run: npm run build
-      - run: npm run release
       - run: git config --global user.name "github-actions[bot]"
       - run: git config --global user.email "github-actions[bot]@users.noreply.github.com"
-      - run: git push --follow-tags origin HEAD:release/${{ github.ref_name }}
+      - run: npm run release
+      # - run: git push --follow-tags origin HEAD:release/${{ github.ref_name }}
       - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOEKEN_NO_OTP}}
