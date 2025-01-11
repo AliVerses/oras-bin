@@ -4,9 +4,7 @@
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "release": "standard-version",
-    "prepublishOnly": "npm run build && npm run release"
+    "build": "tsc"
   },
   "bin": {
     "oras": "./bin/linux/oras"
