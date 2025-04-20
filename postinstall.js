@@ -45,6 +45,7 @@ const unzipper = __importStar(require("unzipper"));
  * Ensures postinstall only runs for end users, never in CI or during publish.
  */
 function isDevInstall() {
+    console.log('[oras-bin] Checking if this is a dev install...', process.env);
     return !!(process.env.ORAS_BIN_DEV ||
         process.env.npm_lifecycle_event === 'build' ||
         process.env.npm_config_argv?.includes('link'));
