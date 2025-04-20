@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
-    "target": "ES6",
+    "target": "ES2022",
     "module": "commonjs",
-    "outDir": "./dist",
-    "rootDir": "./src",
+    "declaration": true,
+    "outDir": "dist",
+    "rootDir": ".",
     "strict": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true
   },
-  "include": ["src/**/*"]
+  "include": ["src", "postinstall.ts", "test"]
 }

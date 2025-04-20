@@ -1,33 +1,40 @@
 {
   "name": "oras-bin",
-  "version": "0.0.2",
+  "version": "1.3.0-beta.2",
+  "description": "Node.js wrapper for oras CLI binaries (cross-platform)",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "release": "standard-version",
-    "prepublishOnly": "npm run build && npm run release"
-  },
-  "bin": {
-    "oras": "./bin/linux/oras"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
+    "postinstall": "node postinstall.js || node dist/postinstall.js",
+    "test": "mocha -r ts-node/register test/**/*.ts"
   },
   "files": [
     "dist",
-    "bin"
+    "lib",
+    "postinstall.js"
   ],
-  "keywords": [],
+  "keywords": [
+    "oras",
+    "binary",
+    "cli",
+    "wrapper"
+  ],
   "author": "",
-  "license": "ISC",
-  "description": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/tar": "^6.1.13",
+    "@types/unzipper": "^0.10.11",
+    "assert": "^2.0.0",
+    "mocha": "^10.0.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^5.0.0"
+  },
   "dependencies": {
-    "node-fetch": "^3.3.2",
     "tar": "^7.4.3",
     "unzipper": "^0.12.3"
-  },
-  "devDependencies": {
-    "@types/node": "^22.10.3",
-    "@types/unzipper": "^0.10.10",
-    "standard-version": "^9.5.0",
-    "typescript": "^5.7.2"
   }
 }
