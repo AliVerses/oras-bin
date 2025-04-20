@@ -10,7 +10,7 @@
     "prepublishOnly": "npm run build",
     "postinstall": "node postinstall.js || node dist/postinstall.js",
     "pretest": "ORAS_BIN_DEV=false npm install",
-    "test": "CI=false mocha -r ts-node/register test/**/*.ts"
+    "test": "mocha -r ts-node/register test/**/*.ts"
   },
   "files": [
     "dist",

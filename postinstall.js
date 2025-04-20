@@ -47,9 +47,7 @@ const unzipper = __importStar(require("unzipper"));
 function isDevInstall() {
     return !!(process.env.ORAS_BIN_DEV ||
         process.env.npm_lifecycle_event === 'build' ||
-        process.env.npm_config_argv?.includes('link') ||
-        process.env.CI // disables postinstall in CI/CD
-    );
+        process.env.npm_config_argv?.includes('link'));
 }
 function getBinaryPattern(platform, arch) {
     if (platform === 'darwin') {
