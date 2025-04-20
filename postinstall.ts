@@ -34,7 +34,6 @@ export async function extractBinary() {
     console.log('[oras-bin] Skipping binary extraction/cleanup (dev mode/CI detected)');
     return;
   }
-  // Always resolve lib relative to the package root, not dist
   const libDir = path.resolve(__dirname, '../lib');
   const binDir = path.resolve(__dirname, '../.bin');
   if (!fs.existsSync(libDir)) {
