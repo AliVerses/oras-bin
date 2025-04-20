@@ -1,0 +1,29 @@
+name: Manual Unpublish npm Package Version
+
+description: "Manually unpublish a specific version of the npm package from the registry."
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to unpublish (e.g., 1.3.0-beta.2)'
+        required: true
+        type: string
+
+jobs:
+  unpublish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.x'
+          registry-url: 'https://registry.npmjs.org/'
+      - name: Unpublish npm package version
+        run: |
+          PKG_NAME=$(jq -r .name package.json)
+          VERSION="${{ github.event.inputs.version }}"
+          echo "Unpublishing $PKG_NAME@$VERSION ..."
+          npm unpublish "$PKG_NAME@$VERSION" --force
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOEKEN_NO_OTP }}
