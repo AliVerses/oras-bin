@@ -1,6 +1,6 @@
 {
   "name": "oras-bin",
-  "version": "1.2.2",
+  "version": "v1.3.0-beta.2",
   "description": "Node.js wrapper for oras CLI binaries (cross-platform)",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
