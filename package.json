@@ -6,9 +6,10 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run build",
     "postinstall": "node dist/postinstall.js",
-    "test": "mocha -r ts-node/register test/**/*.ts",
-    "prepare": "npm run build"
+    "test": "mocha -r ts-node/register test/**/*.ts"
   },
   "files": [
     "dist",

@@ -7,12 +7,16 @@ import * as unzipper from 'unzipper';
 export type SupportedPlatform = 'darwin' | 'linux' | 'win32';
 export type SupportedArch = 'x64' | 'arm64';
 
+/**
+ * Skips binary extraction in CI/CD and dev environments.
+ * Ensures postinstall only runs for end users, never in CI or during publish.
+ */
 function isDevInstall(): boolean {
   return !!(
     process.env.ORAS_BIN_DEV ||
     process.env.npm_lifecycle_event === 'build' ||
     process.env.npm_config_argv?.includes('link') ||
-    process.env.CI
+    process.env.CI // disables postinstall in CI/CD
   );
 }
 
