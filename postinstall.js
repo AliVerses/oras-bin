@@ -77,8 +77,8 @@ async function extractBinary() {
         console.log('[oras-bin] Skipping binary extraction/cleanup (dev mode/CI detected)');
         return;
     }
-    const libDir = path.resolve(__dirname, '../lib');
-    const binDir = path.resolve(__dirname, '../.bin');
+    const libDir = path.resolve(__dirname, 'lib');
+    const binDir = path.resolve(__dirname, '.bin');
     if (!fs.existsSync(libDir)) {
         console.error('[oras-bin] ERROR: lib directory does not exist. Please add compressed oras binaries to lib/.');
         return;
