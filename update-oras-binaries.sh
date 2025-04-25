@@ -12,7 +12,7 @@ mkdir -p "$BIN_DIR"
 #   | head -n1 \
 #   | sed -E 's/.*"v([^"]+)".*/\1/')
 
-LATEST_VERSION="v1.3.0-beta.2"
+LATEST_VERSION="v1.3.0-beta.3"
 
 # Remove leading 'v' for filenames
 VERSION_NO_V="${LATEST_VERSION#v}"
