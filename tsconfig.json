@@ -4,10 +4,11 @@
     "module": "commonjs",
     "declaration": true,
     "outDir": "dist",
-    "rootDir": ".",
+    "rootDir": "src",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src", "postinstall.ts", "test"]
+  "include": ["src", "src/postinstall.ts"],
+  "exclude": ["src/**/*.test.ts", "legacy-v1-alpha-src/**/*"]
 }
