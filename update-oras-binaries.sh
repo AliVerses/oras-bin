@@ -6,13 +6,13 @@ BIN_DIR="lib"  # Change to 'lib' if you want
 mkdir -p "$BIN_DIR"
 
 # 1. Get latest stable (non-prerelease) version
-# LATEST_VERSION=$(curl -s https://api.github.com/repos/oras-project/oras/releases \
-#   | grep -E '"tag_name":' \
-#   | grep -vE 'beta|rc' \
-#   | head -n1 \
-#   | sed -E 's/.*"v([^"]+)".*/\1/')
+LATEST_VERSION=v$(curl -s https://api.github.com/repos/oras-project/oras/releases \
+  | grep -E '"tag_name":' \
+  | grep -vE 'beta|rc' \
+  | head -n1 \
+  | sed -E 's/.*"v([^"]+)".*/\1/')
 
-LATEST_VERSION="v1.3.0-beta.3"
+# LATEST_VERSION="v1.3.0-beta.3"
 
 # Remove leading 'v' for filenames
 VERSION_NO_V="${LATEST_VERSION#v}"

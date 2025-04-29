@@ -11,7 +11,7 @@ npm install oras-bin
 ## Usage
 
 ```js
-const oras = require('oras-bin');
+const oras = require('oras-bin-wrapper');
 const { spawnSync } = require('child_process');
 
 // Example: print oras version
