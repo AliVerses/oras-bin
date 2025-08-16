@@ -26,12 +26,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/AliVerses/oras-bin.git"
+    "url": "https://github.com/AliVerses/oras-bin-wrapper"
   },
   "bugs": {
-    "url": "https://github.com/AliVerses/oras-bin/issues"
+    "url": "https://github.com/AliVerses/oras-bin-wrapper/issues"
   },
-  "homepage": "https://github.com/AliVerses/oras-bin#readme",
+  "homepage": "https://github.com/AliVerses/oras-bin-wrapper#readme",
   "devDependencies": {
     "@types/mocha": "^10.0.10",
     "@types/tar": "^6.1.13",
